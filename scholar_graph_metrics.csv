@@ -1,4 +1,13 @@
-Professor,Scholar ID,Nodes,Edges,Density,Avg Degree,Clustering Coefficient,Degree Centrality,Betweenness Centrality,Closeness Centrality
-Dr. Narendra S Chaudhari,hgwfis4AAAAJ,44,43,0.022727272727272728,1.9545454545454546,0.0,1.0,0.0,0.0
-Dr. Aruna Tiwari,92WslkgAAAAJ,10,9,0.1,1.8,0.0,1.0,0.0,0.0
-"Prof. Anirban Sengupta, IEEE Distinguished Visitor, IEEE Distinguished Lecturer, FIET, FBCS",4aHf5O8AAAAJ,23,22,0.043478260869565216,1.9130434782608696,0.0,1.0,0.0,0.0
+Professor,Scholar ID,Nodes,Edges,Density,Avg Degree,Clustering Coefficient,Degree Centrality,Betweenness Centrality,Closeness Centrality,In-Degree
+Dr. Narendra S Chaudhari,hgwfis4AAAAJ,44,43,0.022727272727272728,1.9545454545454546,0.0,1.0,0.0,0.0,0
+Dr. Narendra S Chaudhari,hgwfis4AAAAJ,44,43,0.022727272727272728,1.9545454545454546,0.0,1.0,0.0,0.0,0
+Dr. Aruna Tiwari,92WslkgAAAAJ,10,9,0.1,1.8,0.0,1.0,0.0,0.0,0
+"Prof. Anirban Sengupta, IEEE Distinguished Visitor, IEEE Distinguished Lecturer, FIET, FBCS",4aHf5O8AAAAJ,23,22,0.043478260869565216,1.9130434782608696,0.0,1.0,0.0,0.0,0
+Dr. Surya Prakash,pqP66FLxeBMC,25,24,0.04,1.92,0.0,1.0,0.0,0.0,0
+Nagendra  Kumar,lCP4ZqMAAAAJ,3,2,0.3333333333333333,1.3333333333333333,0.0,1.0,0.0,0.0,0
+Puneet Gupta,yUB8lNsAAAAJ,1,0,0.0,0.0,0.0,1.0,0.0,0.0,0
+Sidharth Sharma,c0R1WokAAAAJ,12,11,0.08333333333333333,1.8333333333333333,0.0,1.0,0.0,0.0,0
+Aniruddha Singh Kushwaha,zu1MSEEAAAAJ,6,5,0.16666666666666666,1.6666666666666667,0.0,1.0,0.0,0.0,0
+Dr.Sanyam Shukla,HMAzliEAAAAJ,8,7,0.125,1.75,0.0,1.0,0.0,0.0,0
+Jay Kumar Jain,0YYnNYkAAAAJ,8,7,0.125,1.75,0.0,1.0,0.0,0.0,0
+Dr. Mitul Kumar Ahirwal,fWgOgcIAAAAJ,11,10,0.09090909090909091,1.8181818181818181,0.0,1.0,0.0,0.0,0
