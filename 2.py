@@ -1,23 +1,23 @@
 import pandas as pd
 import networkx as nx
-import matplotlib.pyplot as plt
+from pyvis.network import Network
 
 # Load IIT and NIT professor data
 iit_df = pd.read_csv("iitb_professor_citation_data.csv")
 nit_df = pd.read_csv("nitb_professor_citation_data.csv")
 
-# Create graph
+# Create NetworkX Graph
 G = nx.Graph()
 
 # Add IIT professors (Red)
 iit_profs = set(iit_df.iloc[:, 0])
 for prof in iit_profs:
-    G.add_node(prof, color="red")
+    G.add_node(prof, color="red", title=prof)  # Tooltip text
 
 # Add NIT professors (Blue)
 nit_profs = set(nit_df.iloc[:, 0])
 for prof in nit_profs:
-    G.add_node(prof, color="blue")
+    G.add_node(prof, color="blue", title=prof)
 
 # Extract and add co-authors
 iit_coauthors = set()
@@ -35,12 +35,12 @@ for coauthors in nit_df.iloc[:, -1]:
 # Common co-authors (Green)
 common_coauthors = iit_coauthors.intersection(nit_coauthors)
 for author in common_coauthors:
-    G.add_node(author, color="green")
+    G.add_node(author, color="green", title="Common Co-author")
 
 # Other co-authors (Gray)
 other_coauthors = (iit_coauthors.union(nit_coauthors)) - common_coauthors - iit_profs - nit_profs
 for author in other_coauthors:
-    G.add_node(author, color="gray")
+    G.add_node(author, color="gray", title="Other Co-author")
 
 # Add edges between professors and co-authors
 for _, row in iit_df.iterrows():
@@ -57,13 +57,12 @@ for _, row in nit_df.iterrows():
         for coauthor in coauthors:
             G.add_edge(prof, coauthor)
 
-# Draw the graph
-plt.figure(figsize=(12, 8))
-node_colors = [G.nodes[node]["color"] for node in G.nodes]
+# Convert NetworkX graph to Pyvis Network
+net = Network(notebook=True, height="800px", width="100%", bgcolor="#222222", font_color="white")
+net.from_nx(G)
 
-pos = nx.spring_layout(G, seed=42)  # Positioning for better visualization
-nx.draw(G, pos, with_labels=True, node_size=50, font_size=6, node_color=node_colors, edge_color="gray", alpha=0.6)
+# Set node physics for better visualization
+net.repulsion(node_distance=150, central_gravity=0.2, spring_length=200, damping=0.09)
 
-# Show the plot
-plt.title("Co-authorship Network between IIT and NIT Professors")
-plt.show()
+# Save and display the graph
+net.show("coauthorship_network.html")
